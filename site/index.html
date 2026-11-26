@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculate branch EOQ from three monthly sales reports, an item list, and supplier delivery days.">
+  <title>FLI Branch EOQ Generator</title><link rel="stylesheet" href="styles.css">
+</head>
+<body><main class="app-shell"><section class="workspace" aria-labelledby="page-title">
+  <header class="header"><div class="eyebrow">FLI RETAIL OPERATIONS</div><h1 id="page-title">Branch EOQ Generator</h1><p>Upload three monthly sales reports, the item list, and the supplier list.</p></header>
+  <div class="privacy-note" role="note"><span class="privacy-icon">✓</span> Files are processed only in this browser. They are not uploaded or stored online.</div>
+  <form id="eoq-form" novalidate><div class="upload-grid">
+    <label class="file-card"><input id="month-1" type="file" accept=".csv,.xlsx,.xlsm" required><span class="file-number">01</span><span class="file-title">Month 1 Sales</span><span class="file-help">CSV or Excel Item Sale report</span><span class="file-choice" id="month-1-name">Choose file</span></label>
+    <label class="file-card"><input id="month-2" type="file" accept=".csv,.xlsx,.xlsm" required><span class="file-number">02</span><span class="file-title">Month 2 Sales</span><span class="file-help">CSV or Excel Item Sale report</span><span class="file-choice" id="month-2-name">Choose file</span></label>
+    <label class="file-card"><input id="month-3" type="file" accept=".csv,.xlsx,.xlsm" required><span class="file-number">03</span><span class="file-title">Month 3 Sales</span><span class="file-help">CSV or Excel Item Sale report</span><span class="file-choice" id="month-3-name">Choose file</span></label>
+    <label class="file-card"><input id="item-list" type="file" accept=".csv,.xlsx,.xlsm" required><span class="file-number">04</span><span class="file-title">Item List</span><span class="file-help">Item Code, Item Name, Supplier Name, Active</span><span class="file-choice" id="item-list-name">Choose file</span></label>
+    <label class="file-card"><input id="supplier-list" type="file" accept=".csv,.xlsx,.xlsm" required><span class="file-number">05</span><span class="file-title">Supplier List</span><span class="file-help">Supplier Name and Sup Days</span><span class="file-choice" id="supplier-list-name">Choose file</span></label>
+  </div>
+  <div class="workflow-panel"><button id="load-button" type="button" class="secondary action-button">Load Files &amp; Find Branches</button><label class="branch-field" for="branch-select"><span>Branch</span><select id="branch-select" disabled><option value="">Load files first</option></select></label></div>
+  <div class="actions"><button id="generate-button" type="submit" disabled><span>Generate EOQ Excel</span><span>→</span></button><button id="reset-button" class="secondary" type="button">Clear</button></div>
+  </form><div id="status" class="status" aria-live="polite">Select all five files to begin.</div>
+  <section class="logic-note"><strong>EOQ calculation</strong><span>Maximum monthly sale ÷ 30 × supplier days</span><span>Based EOQ ≥ 3: round up · 0 &lt; Based EOQ &lt; 3: return 3 · otherwise: 0</span></section>
+</section></main><script src="jszip.min.js"></script><script src="app.js"></script></body></html>

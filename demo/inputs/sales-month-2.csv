@@ -1,0 +1,10 @@
+Demo monthly sales
+,Code,Item Name,Branch,,,,,Qty
+,R01,Rice 1 kg,Demo Central,,,,,70
+,R01,Rice 1 kg,Demo Central,,,,,50
+,T02,Tea 100 g,Demo Central,,,,,4
+,P03,Pasta 500 g,Demo Central,,,,,40
+,S04,Salt 400 g,Demo Central,,,,,0
+,J05,Jam 250 g,Demo Central,,,,,0
+,X06,Retired pack,Demo Central,,,,,30
+,R01,Rice 1 kg,Demo North,,,,,30
